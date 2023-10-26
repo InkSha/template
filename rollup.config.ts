@@ -3,7 +3,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import alias from '@rollup/plugin-alias'
 import esbuild from 'rollup-plugin-esbuild'
-import typescript from 'rollup-plugin-typescript2'
+import typescript from '@rollup/plugin-typescript'
 import babel from '@rollup/plugin-babel'
 import copy from 'rollup-plugin-copy'
 import { defineConfig } from 'rollup'
@@ -37,9 +37,9 @@ const input = './src/index.ts'
 export default defineConfig({
   input,
   output: [{
-      dir: './dist',
-      format: 'umd',
-      name: 'PackageName'
-    }],
+    dir: './dist',
+    format: 'umd',
+    name: 'PackageName'
+  }],
   plugins,
 })
