@@ -21,9 +21,9 @@ module.exports = {
     subject: '短说明:',
     body: '长说明，使用"|"换行(可选)：',
     footer: '关联关闭的issue，例如：#31, #34(可选):',
-    confirmCommit: '确定提交说明?'
+    confirmCommit: '确定提交说明?',
   },
   allowCustomScopes: true,
   allowBreakingChanges: ['特性', '修复'],
-  subjectLimit: 100
+  subjectLimit: 100,
 }

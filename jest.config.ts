@@ -4,8 +4,8 @@ import { defaults } from 'jest-config'
 const config: Config = {
   verbose: true,
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'mts'],
-  preset: "ts-jest",
-  testEnvironment: "node"
-};
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+}
 
-export default config;
+export default config

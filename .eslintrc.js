@@ -27,10 +27,6 @@ module.exports = {
     'linebreak-style': ['error', 'windows'],
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
-    "@typescript-eslint/no-explicit-any": [
-      2,
-      { ignoreRestArgs: true },
-    ]
-
+    '@typescript-eslint/no-explicit-any': [2, { ignoreRestArgs: true }],
   },
 }
