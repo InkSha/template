@@ -1,12 +1,13 @@
 {
   "name": "packages",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My Packaging Template.",
   "author": "InkSha",
   "license": "MIT",
   "main": "dist/index.min.js",
   "module": "dist/index.min.mjs",
   "types": "dist/index.d.ts",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/InkSha/PackageTemplate.git"
@@ -35,23 +36,23 @@
   },
   "lint-stated": {
     "src*/**/*.ts": [
-      "prettier --config .prettierrc.js --write",
+      "prettier --config .prettierrc.cjs --write",
       "eslint",
       "git add"
     ],
     "src*/**/*.json": [
-      "prettier --config .prettierrc.js --write",
+      "prettier --config .prettierrc.cjs --write",
       "eslint",
       "git add"
     ]
   },
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin typescript",
-    "build:format": "prettier --config .prettierrc.js --write ./src/** ./*js ./*ts",
+    "build:format": "prettier --config .prettierrc.cjs --write ./src/** ./*js ./*ts",
     "build:lint": "eslint src/** --fix",
     "build:push": "npm run format && npm run build",
     "build:publish": "npm publish --access public",
-    "commit": "cz-customizable/standalone.js",
+    "commit": "cz-customizable/standalone.cjs",
     "commit:log": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "dev": "nodemon --config nodemon.json src/index.ts",
     "dev:build": "rollup -c rollup.config.ts --configPlugin typescript --watch",
