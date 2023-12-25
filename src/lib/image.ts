@@ -5,7 +5,7 @@ import sharp from 'sharp'
 import { computedHash } from '@inksha/utils'
 import { ImageOptions } from './../types'
 
-export class Image {
+export class Image implements ImageOptions {
 
   private route!: Router
 
@@ -19,27 +19,11 @@ export class Image {
   public height = 500
   public rename: ImageOptions['rename'] = (rename: string, old: string) => rename
 
-  constructor ({
-    quality,
-    fields,
-    upload,
-    see,
-    storage,
-    dest,
-    rename,
-    width,
-    height
-  }: ImageOptions = {}) {
+  constructor (options: ImageOptions = {}) {
     this.route = Router()
-    if (quality) this.quality = quality
-    if (fields) this.fields = fields
-    if (upload) this.upload = upload
-    if (see) this.see = see
-    if (storage) this.storage = storage
-    if (dest) this.dest = dest
-    if (width) this.width = width
-    if (height) this.height = height
-    if (rename) this.rename = rename
+    for (const [key, val] of Object.entries(options)) {
+      this[key] = val
+    }
   }
 
 
