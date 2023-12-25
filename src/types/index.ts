@@ -10,6 +10,20 @@ export interface ImageOptions {
   rename?: (rename: string, old: string) => string
 }
 
+export interface FilerOptions {
+  base: string
+  create: string
+  rename: string
+  read: string
+  edit: string
+  copy: string
+  move: string
+  remove: string
+  recycle: string
+  upload: string
+  download: string
+}
+
 export enum users {
   root,
   admin,
