@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NEXT Template
 
-## Getting Started
+next 项目模板
 
-First, run the development server:
+## 使用技术栈
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- `"react": "^18"`
+- `"react-dom": "^18"`
+- `"next": "14.1.0"`
+- `"typescript": "^5"`
+- `"sass": "^1.71.1"`
+
+## 项目结构
+
+```sh
+|—— .husky                     - git 钩子
+|—— .vscode                    - vscode 配置
+|  |——  extensions.json        - 推荐的 vscode 插件列表
+|  |——  settings.json          - 项目的 vscode 配置
+|—— public                     - 静态资源文件夹
+|  |——  audios                 - 音频资源
+|  |——  fonts                  - 字体资源
+|  |——  images                 - 图片资源
+|  |——  videos                 - 视频资源
+|—— src                        - 项目根目录
+|  |——  api                    - 请求接口
+|  |——  app                    - 页面
+|  |  |—— globals.css          - 全局样式
+|  |  |—— layout.tsx           - 顶级布局
+|  |  |—— page.tsx             - 首页文件
+|  |  `—— page.module.css      - 首页模块样式
+|  |——  component              - 页面组件
+|  |——  config                 - 配置文件夹
+|  |——  locale                 - 本地化资源
+|  |——  shared                 - 可共享内容
+|  |——  store                  - 数据仓库
+|  |——  theme                  - 主题样式
+|  |——  types                  - 类型定义
+|  `——  utils                  - 工具方法
+|—— .cz-config.mjs             - git-cz 配置文件
+|—— .env                       - 环境配置文件
+|—— .eslintrc.json             - eslint 配置文件
+|—— .prettierrc                - prettier 配置文件
+|—— next.config.mjs            - next 配置文件
+`—— package.json               - 包管理文件
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
