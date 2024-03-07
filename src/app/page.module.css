@@ -28,10 +28,35 @@
 .description p {
   position: relative;
   margin: 0;
+  width: 30rem;
   padding: 1rem;
   background-color: rgba(var(--callout-rgb), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
+}
+
+.selection {
+  height: 3rem;
+  width: 10rem;
+  padding-left: 0.5rem;
+}
+
+.to {
+  font-size: 3rem;
+  text-shadow: 2px 2px 0.5rem gray;
+}
+
+.link {
+  margin: 0 1rem;
+  color: aquamarine;
+  text-shadow: 0 0 0.1rem gray;
+  text-decoration: underline;
+}
+
+.see {
+  color: chocolate;
+  text-shadow: 0 0 0.1rem gray;
+  text-decoration: line-through black;
 }
 
 .code {
@@ -51,7 +76,9 @@
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+  transition:
+    background 200ms,
+    border 200ms;
 }
 
 .card span {
@@ -98,7 +125,7 @@
 
 .center::before,
 .center::after {
-  content: "";
+  content: '';
   left: 50%;
   position: absolute;
   filter: blur(45px);

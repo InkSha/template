@@ -1,0 +1,15 @@
+{
+  "title": "标题",
+  "getStared": "开始编辑 ",
+  "docs": "文档",
+  "docsText": "查找有关Next.js功能和API的深入信息。",
+  "learn": "学习",
+  "learnText": "在一个有小测验的互动课程中了解Next.js!",
+  "templates": "模板",
+  "templatesText": "探索Next.js的入门模板",
+  "deploy": "部署",
+  "deployText": "立即将您的Next.js网站部署到可与Vercel共享的URL。",
+  "to": "前往",
+  "link": "站点",
+  "see": "查看"
+}

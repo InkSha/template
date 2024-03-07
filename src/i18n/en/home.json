@@ -1,0 +1,15 @@
+{
+  "title": "title",
+  "getStared": "Get started by editing ",
+  "docs": "Docs",
+  "docsText": "Find in-depth information about Next.js features and API.",
+  "learn": "Learn",
+  "learnText": "Learn about Next.js in an interactive course with quizzes!",
+  "templates": "Templates",
+  "templatesText": "Explore starter templates for Next.js",
+  "deploy": "Deploy",
+  "deployText": "Instantly deploy your Next.js site to a shareable URL with Vercel.",
+  "to": "go to",
+  "link": "site",
+  "see": "see"
+}
