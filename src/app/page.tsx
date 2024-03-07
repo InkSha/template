@@ -11,12 +11,6 @@ import zh from '@/i18n/zh/home.json'
 import en from '@/i18n/en/home.json'
 
 export default function Home() {
-  fetch('https://v.api.aa1.cn/api/yiyan/index.php', { method: 'get' }).then(
-    (res) => {
-      console.log(res)
-    }
-  )
-
   const [languageOptions, updateLanguageOptions] = useState<AllLanguage[]>([])
   const [languageMode, updateLanguageMode] = useState<AllLanguage>(
     AllLanguage.en

@@ -31,7 +31,10 @@ next 项目模板
 |  |  `—— page.module.css      - 首页模块样式
 |  |——  component              - 页面组件
 |  |——  config                 - 配置文件夹
-|  |——  locale                 - 本地化资源
+|  |——  i18n                   - 国际化资源
+|  |  |—— zh                   - 中文语言资源文件夹
+|  |  |—— en                   - 英文语言资源文件夹
+|  |  `—— index.ts             - 国际化资源配置文件
 |  |——  shared                 - 可共享内容
 |  |——  store                  - 数据仓库
 |  |——  theme                  - 主题样式
@@ -43,4 +46,41 @@ next 项目模板
 |—— .prettierrc                - prettier 配置文件
 |—— next.config.mjs            - next 配置文件
 `—— package.json               - 包管理文件
+```
+
+### 国际化资源
+
+```tsx
+// 在@/i18n文件夹下初始化完毕后
+
+// 页面使用
+import { useTranslation, Trans } from 'react-i18next'
+
+// 按需加载语言文件
+import zh from '@/i18n/zh/home.json'
+import en from '@/i18n/en/home.json'
+
+// ...
+
+const { t, i18n } = useTranslation()
+
+// 切换语言模式
+i18n.changeLanguage(mode) 
+// 切换语言资源
+// namespace 默认为 translation
+i18n.addResourceBundle(mode, namespace, mode === 'en' ? en : zh)
+
+return (
+    <div>
+        {
+            // t 是使用语言资源的函数
+            // title 则是对应语言资源的 key
+            t('title')
+        }
+        <Trans>
+            {/** title 是对应语言资源的 key, 将自动转换为对应的语言资源 */}
+            title
+        </Trans>
+    </div>
+)
 ```

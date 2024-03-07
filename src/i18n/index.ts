@@ -1,9 +1,6 @@
 import i18next, { ResourceLanguage } from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
-import zh_home_text from './zh/home.json'
-import en_home_text from './en/home.json'
-
 /** i18n 实例 */
 export const i18nextInstance = i18next.createInstance()
 // 注入 initReactI18next
@@ -12,8 +9,11 @@ i18nextInstance.use(initReactI18next)
 
 /** 所有语言语种 */
 export enum AllLanguage {
+  /** 英文 */
   en = 'en',
+  /** 中文 */
   zh = 'zh'
+  // 其他语言待添加
 }
 
 /** 翻译资源命名空间 */
