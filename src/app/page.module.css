@@ -41,7 +41,9 @@
   padding-left: 0.5rem;
 }
 
-.to {
+.to,
+.link,
+.see {
   font-size: 3rem;
   text-shadow: 2px 2px 0.5rem gray;
 }
@@ -51,12 +53,6 @@
   color: aquamarine;
   text-shadow: 0 0 0.1rem gray;
   text-decoration: underline;
-}
-
-.see {
-  color: chocolate;
-  text-shadow: 0 0 0.1rem gray;
-  text-decoration: line-through black;
 }
 
 .code {

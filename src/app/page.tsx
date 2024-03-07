@@ -5,6 +5,7 @@ import { AllLanguageKeys, AllLanguage, ResourcesNamespace } from '@/i18n'
 import styles from './page.module.css'
 import { useEffect, useState } from 'react'
 import { useTranslation, Trans } from 'react-i18next'
+import { Button } from '@material-ui/core'
 
 // 按需加载语言文件
 import zh from '@/i18n/zh/home.json'
@@ -78,24 +79,17 @@ export default function Home() {
           height={37}
           priority
         />
-        <a
-          href='https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
-          className={styles.card}
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <h2>
-            <span className={styles.to}>
-              <Trans>to</Trans>
-            </span>
-            <span className={styles.link}>
-              <Trans>link</Trans>
-            </span>
-            <span className={styles.see}>
-              <Trans>see</Trans>
-            </span>
-          </h2>
-        </a>
+        <Button>
+          <span className={styles.to}>
+            <Trans>to</Trans>
+          </span>
+          <span className={styles.link}>
+            <Trans>link</Trans>
+          </span>
+          <span className={styles.see}>
+            <Trans>see</Trans>
+          </span>
+        </Button>
       </div>
 
       <div className={styles.grid}>
