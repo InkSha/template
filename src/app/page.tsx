@@ -6,6 +6,7 @@ import styles from './page.module.css'
 import { useEffect, useState } from 'react'
 import { useTranslation, Trans } from 'react-i18next'
 import { Button } from '@material-ui/core'
+import { requestExampleData } from '@/api'
 
 // 按需加载语言文件
 import zh from '@/i18n/zh/home.json'
@@ -24,6 +25,10 @@ export default function Home() {
   }
 
   useEffect(() => {
+    requestExampleData().then((res) => {
+      console.log(res, 'res')
+    })
+
     updateLanguageOptions(AllLanguageKeys)
     toggleLanguage(AllLanguageKeys[0])
   }, [])
