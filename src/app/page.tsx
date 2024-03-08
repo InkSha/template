@@ -1,12 +1,11 @@
 'use client'
-
+import styles from './page.module.scss'
+import Link from 'next/link'
 import Image from 'next/image'
 import { AllLanguageKeys, AllLanguage, ResourcesNamespace } from '@/i18n'
-import styles from './page.module.css'
 import { useEffect, useState } from 'react'
 import { useTranslation, Trans } from 'react-i18next'
-import { Button } from '@material-ui/core'
-import { requestExampleData } from '@/api'
+import { Button, Select, MenuItem } from '@material-ui/core'
 
 // 按需加载语言文件
 import zh from '@/i18n/zh/home.json'
@@ -19,19 +18,19 @@ export default function Home() {
   )
   const { t, i18n } = useTranslation()
 
+  /**
+   * 切换语言模式
+   * @param mode 语言模式
+   */
   const toggleLanguage = (mode: AllLanguage = languageMode) => {
     i18n.changeLanguage(mode)
     i18n.addResourceBundle(mode, ResourcesNamespace, mode === 'en' ? en : zh)
   }
 
   useEffect(() => {
-    requestExampleData().then((res) => {
-      console.log(res, 'res')
-    })
-
     updateLanguageOptions(AllLanguageKeys)
     toggleLanguage(AllLanguageKeys[0])
-  }, [])
+  })
 
   useEffect(() => {
     toggleLanguage()
@@ -44,18 +43,18 @@ export default function Home() {
           {t('getStared')}
           <code className={styles.code}>src/app/page.tsx</code>
         </p>
-        <select
-          className={styles.selection}
+        <Select
+          defaultValue={languageMode}
           onChange={(e) => {
-            updateLanguageMode(e.target.value.trim() as AllLanguage)
+            updateLanguageMode((e.target.value as string).trim() as AllLanguage)
           }}
         >
           {languageOptions.map((v) => (
-            <option key={v} value={v}>
+            <MenuItem key={v} value={v}>
               {v}
-            </option>
+            </MenuItem>
           ))}
-        </select>
+        </Select>
         <div>
           <a
             href='https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app'
@@ -88,9 +87,9 @@ export default function Home() {
           <span className={styles.to}>
             <Trans>to</Trans>
           </span>
-          <span className={styles.link}>
+          <Link href='/count' className={styles.link}>
             <Trans>link</Trans>
-          </span>
+          </Link>
           <span className={styles.see}>
             <Trans>see</Trans>
           </span>

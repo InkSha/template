@@ -1,7 +1,16 @@
 import api from './request'
 
 /**
- * 请求示例数据
+ * 请求计数器
+ * @param amount 请求总数
  * @returns 请求数据
  */
-export const requestExampleData = async () => api.get('/connection')
+export const requestCounter = async (amount: number) =>
+  api.get('/counter', { params: { amount } }).then(
+    (res) =>
+      new Promise<{ data: { amount: number } }>((resolve, reject) => {
+        setTimeout(() => {
+          resolve({ data: { amount } })
+        }, 1000)
+      })
+  )

@@ -9,7 +9,7 @@
   "templatesText": "探索Next.js的入门模板",
   "deploy": "部署",
   "deployText": "立即将您的Next.js网站部署到可与Vercel共享的URL。",
-  "to": "前往",
-  "link": "站点",
-  "see": "查看"
+  "to": "查看",
+  "link": "redux",
+  "see": "例子"
 }

@@ -24,20 +24,28 @@ next 项目模板
 |  |——  videos                 - 视频资源
 |—— src                        - 项目根目录
 |  |——  api                    - 请求接口
+|  |  |—— index.ts             - 请求出口
+|  |  |—— request.ts           - 二次封装的 axios 文件
 |  |——  app                    - 页面
-|  |  |—— globals.css          - 全局样式
+|  |  |—— favicon.ico          - 网页图标
+|  |  |—— globals.scss         - 全局样式
 |  |  |—— layout.tsx           - 顶级布局
 |  |  |—— page.tsx             - 首页文件
-|  |  `—— page.module.css      - 首页模块样式
+|  |  `—— page.module.scss     - 首页模块样式
 |  |——  component              - 页面组件
+|  |  |—— provider             - 包装器组件文件夹
 |  |——  config                 - 配置文件夹
+|  |——  hooks                  - 自定义钩子
+|  |  |—— index.ts             - 自定义钩子出口文件
 |  |——  i18n                   - 国际化资源
-|  |  |—— zh                   - 中文语言资源文件夹
-|  |  |—— en                   - 英文语言资源文件夹
+|  |  |—— zh                   - 中文语言资源
+|  |  |—— en                   - 英文语言资源
 |  |  `—— index.ts             - 国际化资源配置文件
 |  |——  shared                 - 可共享内容
 |  |——  store                  - 数据仓库
-|  |——  theme                  - 主题样式
+|  |  |—— slice                - 数据片段
+|  |  |—— index.ts             - 数据仓库配置文件
+|  |  `—— provider.ts          - 包装了 store 的上下文组件 需要使用 store 的组件必须先被该组件包裹
 |  |——  types                  - 类型定义
 |  `——  utils                  - 工具方法
 |—— .cz-config.mjs             - git-cz 配置文件
@@ -91,3 +99,51 @@ return (
 相关代码均存放在 `src/api` 目录下.
 
 `src/api/request.ts` 文件存放二次封装的 `axios` 实例，可以根据业务需要进行修改，并导出给其他请求使用。
+
+### 状态管理
+
+使用 `react-redux` 和 `@reduxjs/toolkit` 进行状态管理。
+
+相关文件均位于 `src/store/` 目录下。
+
+`src/store/index.ts`
+
+```ts
+import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit'
+// 引入位于同级 slice 文件夹下的数据片段文件
+import counterReducer from './slice/counter'
+
+export const store = configureStore({
+  reducer: {
+    // 新增的数据片段都需要增加到这里
+    counter: counterReducer
+  }
+})
+
+// 当前 store 操作的类型提示
+export type AppStore = typeof store
+export type RootState = ReturnType<AppStore['getState']>
+export type AppDispatch = AppStore['dispatch']
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>
+```
+
+`src/store/provider.ts`
+
+```ts
+import { store } from '@/store'
+import React, { ReactNode } from 'react'
+import { Provider } from 'react-redux'
+
+// 注入 store 的 Provider 组件
+// 需要使用 store 的组件必须先被此包裹
+const StoreProvider: React.FC<{
+  children: ReactNode
+}> = ({ children }) => <Provider store={store}>{children}</Provider>
+
+export default StoreProvider
+```

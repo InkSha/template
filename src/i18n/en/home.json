@@ -9,7 +9,7 @@
   "templatesText": "Explore starter templates for Next.js",
   "deploy": "Deploy",
   "deployText": "Instantly deploy your Next.js site to a shareable URL with Vercel.",
-  "to": "go to",
-  "link": "site",
-  "see": "see"
+  "to": "see",
+  "link": "redux",
+  "see": "example"
 }
