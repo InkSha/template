@@ -17,15 +17,20 @@ next 项目模板
 |—— .vscode                    - vscode 配置
 |  |——  extensions.json        - 推荐的 vscode 插件列表
 |  |——  settings.json          - 项目的 vscode 配置
-|—— public                     - 静态资源文件夹
+|—— public                     - 静态资源
 |  |——  audios                 - 音频资源
 |  |——  fonts                  - 字体资源
 |  |——  images                 - 图片资源
 |  |——  videos                 - 视频资源
 |—— src                        - 项目根目录
+|  |——  __test__               - 测试用例
+|  |  |—— unit                 - 单元测试
+|  |  |  `—— __snapshots__     - 单元测试快照
+|  |  |—— e2e                  - e2e测试
+|  |  |  `—— *-snapshots       - e2e测试快照
 |  |——  api                    - 请求接口
 |  |  |—— index.ts             - 请求出口
-|  |  |—— request.ts           - 二次封装的 axios 文件
+|  |  |—— request.ts           - 二次封装的 axios
 |  |——  app                    - 页面
 |  |  |—— favicon.ico          - 网页图标
 |  |  |—— globals.scss         - 全局样式
@@ -33,27 +38,27 @@ next 项目模板
 |  |  |—— page.tsx             - 首页文件
 |  |  `—— page.module.scss     - 首页模块样式
 |  |——  component              - 页面组件
-|  |  |—— provider             - 包装器组件文件夹
+|  |  |—— provider             - 包装器组件
 |  |——  config                 - 配置文件夹
 |  |——  hooks                  - 自定义钩子
-|  |  |—— index.ts             - 自定义钩子出口文件
+|  |  |—— index.ts             - 自定义钩子出口
 |  |——  i18n                   - 国际化资源
 |  |  |—— zh                   - 中文语言资源
 |  |  |—— en                   - 英文语言资源
-|  |  `—— index.ts             - 国际化资源配置文件
+|  |  `—— index.ts             - 国际化资源配置
 |  |——  shared                 - 可共享内容
 |  |——  store                  - 数据仓库
 |  |  |—— slice                - 数据片段
-|  |  |—— index.ts             - 数据仓库配置文件
+|  |  |—— index.ts             - 数据仓库配置
 |  |  `—— provider.ts          - 包装了 store 的上下文组件 需要使用 store 的组件必须先被该组件包裹
 |  |——  types                  - 类型定义
 |  `——  utils                  - 工具方法
-|—— .cz-config.mjs             - git-cz 配置文件
+|—— .cz-config.mjs             - git-cz 配置
 |—— .env                       - 环境配置文件
-|—— .eslintrc.json             - eslint 配置文件
-|—— .prettierrc                - prettier 配置文件
-|—— next.config.mjs            - next 配置文件
-`—— package.json               - 包管理文件
+|—— .eslintrc.json             - eslint 配置
+|—— .prettierrc                - prettier 配置
+|—— next.config.mjs            - next 配置
+`—— package.json               - 包管理
 ```
 
 ### 国际化资源
@@ -147,3 +152,5 @@ const StoreProvider: React.FC<{
 
 export default StoreProvider
 ```
+
+### 测试用例

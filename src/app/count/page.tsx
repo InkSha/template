@@ -48,7 +48,7 @@ const CountContent = () => {
   useEffect(() => {
     updateLanguageOptions(AllLanguageKeys)
     toggleLanguage(AllLanguageKeys[0])
-  })
+  }, [])
 
   useEffect(() => {
     toggleLanguage()

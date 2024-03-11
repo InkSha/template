@@ -30,7 +30,7 @@ export default function Home() {
   useEffect(() => {
     updateLanguageOptions(AllLanguageKeys)
     toggleLanguage(AllLanguageKeys[0])
-  })
+  }, [])
 
   useEffect(() => {
     toggleLanguage()
