@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-# PackingsTemplate
-
-我的打包模板
-=======
-<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -50,8 +44,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-=======
-# template
-some project template
->>>>>>> 60781a98482a4a9cdebf2ace5f5487b53fb28e49
->>>>>>> 85a3483808cddb124885bd4889c82b6bf2752462
