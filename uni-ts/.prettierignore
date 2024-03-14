@@ -1,7 +1,0 @@
-# Ignore artifacts
-build
-dist
-node_modules
-./lib
-./docs
-coverage
