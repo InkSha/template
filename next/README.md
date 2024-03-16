@@ -61,6 +61,11 @@ next 项目模板
 `—— package.json               - 包管理
 ```
 
+### 版本管理
+
+项目使用了 `cz-customizable` 进行规范提交内容。
+提交代码时，使用 `npm run commit` 代替 `git commit` 即可。
+
 ### 国际化资源
 
 ```tsx
